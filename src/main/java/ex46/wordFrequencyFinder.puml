@@ -1,0 +1,18 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Christopher Polanco
+ */
+ @startuml
+'https://plantuml.com/sequence-diagram
+!define DARKRED
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+
+class wordFrequencyFinder {
+
+--
++<u>main (args : String[]) : void
++ readFile () : Scanner
++ createMap () : Map<String, Integer>
++ reportFrequency () : void
+}
+@enduml
