@@ -1,0 +1,16 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Christopher Polanco
+ */
+ @startuml
+'https://plantuml.com/sequence-diagram
+!define DARKRED
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+
+class wordFinder <<utility>> {
+
+--
++ main (args : String[]) : void
+~ modifyFile() : void
+}
+@enduml
