@@ -1,0 +1,31 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Christopher Polanco
+ */
+ @startuml
+'https://plantuml.com/sequence-diagram
+!define DARKRED
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+
+class emp {
+- salary : String (readOnly)
+- lastName : String (readOnly)
+- firstName : String (readOnly)
+--
++ toString () : String
++ firstName () : String
++ lastName () : String
++ salary () : String
+- emp (firstName : String, lastName : String, salary : String)
+}
+
+class parseDataFile <<utility>> {
++ main (args : String[]) : void
+- readFile () : List<emp>
+- print (names : List<emp>) : void
+}
+
+emp --+ parseDataFile
+
+
+@enduml
