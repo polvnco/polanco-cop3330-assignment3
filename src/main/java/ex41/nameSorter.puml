@@ -1,0 +1,31 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Christopher Polanco
+ */
+ @startuml
+'https://plantuml.com/sequence-diagram
+!define DARKRED
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+
+class Name {
+lastName : String (readOnly)
+firstName : String (readOnly)
+--
++ compareTo(other : Name) : int
++ toString() : String
+- getFirst () : String
+- getLast () : String
++ firstName () : String
++ lastName () : String
+- Name (firstName : String, lastName : String)
+}
+
+class nameSorters <<utility>>  {
+- writeFile (names : List<Name>) : void
+- readFile () : List<Name>
++ main (args : String[]) : void
+}
+
+nameSorters <|-- Name
+
+@enduml
