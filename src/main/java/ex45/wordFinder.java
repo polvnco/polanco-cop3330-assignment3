@@ -13,7 +13,7 @@ public class wordFinder {
     }
 
     static void modifyFile() throws IOException {
-        File fileToBeModified = new File("src/main/java/ex45/excercise45_input.txt");
+        File fileToBeModified = new File("src/main/java/ex45/exercise45_input.txt");
 
         StringBuilder oldContent = new StringBuilder();
         BufferedReader reader = null;
@@ -30,7 +30,6 @@ public class wordFinder {
 
                 line = reader.readLine();
             }
-
 
             var newContent = oldContent.toString().replaceAll("utilize", "use");
 
