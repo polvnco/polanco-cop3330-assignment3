@@ -11,46 +11,93 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class websiteGenerator {
+
+    private boolean jsFolder;
+    private boolean cssFolder;
+    private String author;
+    private String site;
+
+    public websiteGenerator(String setAuthor, String setSite, boolean setJavaScript, boolean setCSS){
+        this.author = setAuthor;
+        this.site = setSite;
+        this.jsFolder = setJavaScript;
+        this.cssFolder = setCSS;
+
+    }
+
+
+
     public static void main(String[] args) {
-        websiteGenerator run = new websiteGenerator();
         try {
-            run.makeDir();
+            makeDir();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    public String getSite() {
+    public static String callSite() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Site name: ");
         return scanner.next();
     }
 
-    public String getAuthor() {
+    public static String callAuthor() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Author: ");
         return scanner.nextLine();
     }
 
 
-    public boolean getJavaScript() {
+    public static boolean callJavaScript() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Do you want a folder for JavaScript? ");
         return scanner.nextLine().equals("y");
     }
 
-    public boolean CSS() {
+    public void setAuthor(String scanString){
+        this.author = scanString;
+    }
+
+    public String getAuthor() {
+        return callAuthor();
+    }
+
+    public void setSite(String scanString){
+        this.site = scanString;
+    }
+
+    public String getSite(){
+        return callSite();
+    }
+
+    public void setJavaScript(boolean javaScript){
+        this.jsFolder = javaScript;
+    }
+
+    public boolean getJavaScript(){
+        return callJavaScript();
+    }
+
+    public void setCSS(boolean scanner){
+        this.cssFolder = scanner;
+    }
+
+    public boolean getCSS(){
+        return callCSS();
+    }
+
+    public static boolean callCSS() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Do you want a folder for CSS? ");
         return scanner.next().equals("y");
     }
 
-    private void makeDir() throws IOException {
-        var site = getSite();
-        var a = getAuthor();
-        var js = getJavaScript();
-        var css = CSS();
+    private static void makeDir() throws IOException {
+        var site = callSite();
+        var a = callAuthor();
+        var js = callJavaScript();
+        var css = callCSS();
 
         String directory_Author = "./src/main/java/ex43/website/" + site;
         File authorDirectory = new File(directory_Author);
