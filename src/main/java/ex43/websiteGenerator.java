@@ -35,7 +35,8 @@ public class websiteGenerator {
         }
 
     }
-
+    //************************************************************************
+    //*************** From here and until next comment are getters and setters
     public static String callSite() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Site name: ");
@@ -92,6 +93,17 @@ public class websiteGenerator {
         System.out.print("Do you want a folder for CSS? ");
         return scanner.next().equals("y");
     }
+
+    //************************************************************************
+    //***********************END HERE*****************************************
+
+    /**
+     * This method will call the methods needed such as getting site, author, js, and css values
+     * This will then create the directory for the site
+     * After will create the html file within the directory by writing
+     * Will then check if the it's true that css and js folders are needed
+     * Finally will output that the folders and files were created
+     */
 
     private static void makeDir() throws IOException {
         var site = callSite();
