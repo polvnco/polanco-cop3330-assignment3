@@ -8,14 +8,35 @@
 !includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
 
 class websiteGenerator {
-
+- site : String
+- author : String
+- cssFolders : String
+- jsFolders : String
 --
++ websiteGenerator (setAuthor : String, setSite : String, setJavascript : boolean, setCSS : boolean)
 + main (args : String[]) : void
-+ getSite () : String
++ callSite () : String
++ callAuthor () : String
++ callJavascript () : boolean
++ setAuthor (scanString : String) : void
 + getAuthor () : String
++ setJavascript (javaScript : boolean) : void
 + getJavaScript () : boolean
-+ CSS () : boolean
++ getSite () : String
++ getJavaScript () : boolean
++ callCSS () : boolean
++ setCSS (scanner : boolean) : void
 - makeDir () : void
+}
+
+websiteGeneratorTest <|-- websiteGenerator
+
+class websiteGeneratorTest {
+- siteAuthor : String
+- siteName : String
+--
+~ should_pass_if_jsFolder_created() : void
+~ should_pass_if_cssFolder_created () : void
 }
 
 @enduml
