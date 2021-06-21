@@ -4,6 +4,8 @@
  */
 package ex41;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -30,7 +32,7 @@ class nameSorter {
      * Set variable containing read strings
      * Return variable containing strings from file
      */
-    private static List<Name> readFile() throws Throwable {
+    public static List<Name> readFile() throws Throwable {
         var names = new ArrayList<Name>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/java/ex41/exercise41_input.txt"))) {
             names = bufferedReader.lines().map(line -> line.split(", ")).filter(parts -> parts.length > 1).map(parts -> new Name(parts[1], parts[0])).collect(Collectors.toCollection(ArrayList::new));
@@ -56,7 +58,7 @@ class nameSorter {
 
     private record Name(String firstName, String lastName) implements Comparable<Name> {
 
-        public int compareTo(Name other) {
+        public int compareTo(@NotNull Name other) {
             if (this == other) {
                 return 0;
             } else if (Objects.equals(lastName, other.getLast())) {
