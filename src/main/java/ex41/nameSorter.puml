@@ -12,7 +12,6 @@ lastName : String (readOnly)
 firstName : String (readOnly)
 --
 + compareTo(other : Name) : int
-+ toString() : String
 - getFirst () : String
 - getLast () : String
 + firstName () : String
