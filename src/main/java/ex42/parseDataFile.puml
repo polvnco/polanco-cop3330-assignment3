@@ -12,7 +12,6 @@ class emp {
 - lastName : String (readOnly)
 - firstName : String (readOnly)
 --
-+ toString () : String
 + firstName () : String
 + lastName () : String
 + salary () : String
