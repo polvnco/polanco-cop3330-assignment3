@@ -19,7 +19,7 @@ public class wordFinder {
      * Replace Utilize with Use with String that came from file
      * Write to new file updated
      */
-    static void modifyFile() throws IOException {
+    static String modifyFile() throws IOException {
         File fileToBeModified = new File("src/main/java/ex45/exercise45_input.txt");
 
         StringBuilder oldContent = new StringBuilder();
@@ -58,5 +58,6 @@ public class wordFinder {
             assert writer != null;
             writer.close();
         }
+        return null;
     }
 }
